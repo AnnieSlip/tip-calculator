@@ -1,0 +1,38 @@
+@import "./index.css";
+
+.tip_buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tip_button {
+  border: none;
+  background-color: var(--dark__cyan);
+  color: var(--white);
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 12px 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.tip_button:hover {
+  background-color: var(--cyan);
+  color: var(--dark__cyan);
+}
+
+.active {
+  background-color: var(--light__cyan);
+}
+
+.bill_input {
+  position: relative;
+}
+
+.dollar_img {
+  position: absolute;
+  top: 50%;
+  left: 2%;
+}

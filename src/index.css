@@ -1,0 +1,145 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+:root {
+  --cyan: hsl(172, 67%, 45%);
+  --dark__cyan: hsl(183, 100%, 15%);
+  --grayish__cyan: hsl(186, 14%, 43%);
+  --grayish__cyan2: hsl(184, 14%, 56%);
+  --light__cyan: hsl(185, 41%, 84%);
+  --lightest__cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+body {
+  margin: 0;
+  font-family: "Space Mono", monospace;
+  background-color: var(--light__cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.title {
+  color: var(--dark__cyan);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 120%;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.calculator__app {
+  background-color: var(--white);
+  display: flex;
+  gap: 4px;
+  border-radius: 15px;
+  width: 700px;
+}
+
+.calculator__app > * {
+  width: 50%;
+  padding: 20px;
+}
+
+.amount__section {
+  background-color: var(--dark__cyan);
+  color: var(--white);
+  padding: 15px;
+  border-radius: 15px;
+}
+.reset__btn {
+  display: block;
+  color: var(--dark__cyan);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--cyan);
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  margin-top: 100px;
+}
+
+.reset__btn:hover {
+  background-color: var(--light__cyan);
+}
+
+.tip__amount {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.amount {
+  color: var(--cyan);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.input__section {
+  color: var(--dark__cyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+label {
+  display: block;
+}
+
+input {
+  border: 2px var(--white) solid;
+  background-color: var(--lightest__cyan);
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+  text-align: right;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: "Space Mono", monospace;
+}
+
+input:focus {
+  border: 2px solid var(--cyan);
+}
+.error {
+  border: 2px solid red;
+}
+
+/*Mobile version*/
+
+@media only screen and (max-width: 750px) {
+  .calculator__app {
+    width: 100%;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .calculator__app > * {
+    width: 100%;
+  }
+  .input__section > * {
+    margin-bottom: 10px;
+  }
+}
