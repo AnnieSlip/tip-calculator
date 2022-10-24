@@ -33,7 +33,7 @@ const Amount = ({
             <small>/person</small>
           </div>
 
-          <p className="amount">$ {personTip}</p>
+          <p className="amount">$ {personTip.toFixed(2)}</p>
         </div>
 
         <div className="tip__amount">
@@ -41,7 +41,7 @@ const Amount = ({
             <h4>Total</h4>
             <small>/person</small>
           </div>
-          <p className="amount"> $ {total}</p>
+          <p className="amount"> $ {total.toFixed(2)}</p>
         </div>
         <button type="button" className="reset__btn" onClick={handleclick}>
           reset

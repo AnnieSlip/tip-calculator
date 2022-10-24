@@ -19,6 +19,13 @@
   --lightest__cyan: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
 }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 body {
   margin: 0;
   font-family: "Space Mono", monospace;
@@ -127,6 +134,20 @@ input:focus {
   border: 2px solid red;
 }
 
+.number_of_people {
+  position: relative;
+}
+
+#error_message {
+  position: absolute;
+  color: red;
+  top: 2px;
+  left: 200px;
+}
+
+.hidden {
+  display: none;
+}
 /*Mobile version*/
 
 @media only screen and (max-width: 750px) {

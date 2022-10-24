@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "./Button";
 
 const Bill = ({
@@ -23,7 +23,7 @@ const Bill = ({
         <label htmlFor="bill">Bill</label>
 
         <input
-          type="text"
+          type="number"
           id="bill"
           name="bill"
           value={bill}
@@ -47,7 +47,7 @@ const Bill = ({
             );
           })}
           <input
-            type="text"
+            type="number"
             id="customBillValue"
             className="custom_input"
             name="customBillValue"
@@ -58,14 +58,31 @@ const Bill = ({
         </div>
       </div>
 
-      <div>
+      <div className="number_of_people">
         <label htmlFor="numberOfPeople">Number of People</label>
+
+        <small id="error_message" className="hidden">
+          Can't be zero
+        </small>
+
         <input
-          type="text"
+          type="number"
           id="numberOfPeople"
           name="numberOfPeople"
           value={numberOfPeople}
-          onChange={(e) => setNumberOfPeople(e.target.value)}
+          onChange={(e) => {
+            setNumberOfPeople(e.target.value);
+
+            numberOfPeople == 0
+              ? document
+                  .getElementById("error_message")
+                  .classList.remove("hidden")
+              : document
+                  .getElementById("error_message")
+                  .classList.add("hidden");
+
+            // console.log(numberOfPeople);
+          }}
           className={`${numberOfPeople == 0 ? "error" : ""}`}
         />
       </div>
