@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Button from "./Button";
+const tips = [5, 10, 15, 25, 50];
 
 const Bill = ({
   tip,
@@ -9,7 +10,12 @@ const Bill = ({
   numberOfPeople,
   setNumberOfPeople,
 }) => {
-  const tips = [5, 10, 15, 25, 50];
+  const handleChange = (e) => {
+    setNumberOfPeople(e.target.value);
+    numberOfPeople == 0
+      ? document.getElementById("error_message").classList.remove("hidden")
+      : document.getElementById("error_message").classList.add("hidden");
+  };
 
   return (
     <section className="input__section">
@@ -70,19 +76,7 @@ const Bill = ({
           id="numberOfPeople"
           name="numberOfPeople"
           value={numberOfPeople}
-          onChange={(e) => {
-            setNumberOfPeople(e.target.value);
-
-            numberOfPeople == 0
-              ? document
-                  .getElementById("error_message")
-                  .classList.remove("hidden")
-              : document
-                  .getElementById("error_message")
-                  .classList.add("hidden");
-
-            // console.log(numberOfPeople);
-          }}
+          onChange={handleChange}
           className={`${numberOfPeople == 0 ? "error" : ""}`}
         />
       </div>

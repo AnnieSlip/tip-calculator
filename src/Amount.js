@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useMemo } from "react";
+let personTip = 0;
+let total = 0;
 
 const Amount = ({
   bill,
@@ -8,21 +10,21 @@ const Amount = ({
   setBill,
   setNumberOfPeople,
 }) => {
-  let personTip = 0;
-  let total = 0;
+  useMemo(() => {
+    if (bill && tip && numberOfPeople) {
+      personTip = (Number(bill) * Number(tip)) / 100 / Number(numberOfPeople);
+      total =
+        Number(bill) / Number(numberOfPeople) +
+        personTip * Number(numberOfPeople);
+    }
+  });
 
-  if (bill && tip && numberOfPeople) {
-    personTip = (Number(bill) * Number(tip)) / 100 / Number(numberOfPeople);
-    total =
-      Number(bill) / Number(numberOfPeople) +
-      personTip * Number(numberOfPeople);
-  }
   const handleclick = () => {
     setTip("");
     setNumberOfPeople("1");
     setBill("");
-    personTip = 0.0;
-    total = 0.0;
+    personTip = 0;
+    total = 0;
   };
   return (
     <section>

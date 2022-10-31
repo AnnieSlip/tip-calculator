@@ -2,9 +2,9 @@ import React from "react";
 import "./button.css";
 
 const Button = (props) => {
-  const { num, className } = props;
+  const { num, className, onClick } = props;
   return (
-    <button className={className} onClick={props.onClick}>
+    <button className={className} onClick={onClick}>
       {num} %
     </button>
   );
